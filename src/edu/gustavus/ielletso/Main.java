@@ -10,12 +10,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LinkedList<String> input = new LinkedList<String>();
-        while (true) {
+        while (scanner.hasNext())
             input.add(scanner.nextLine());
-            if (input.getLast().equals("-1")) {
-                break;
-            }
-        }
         scanner.close();
 
         Graph graph = new Graph();
@@ -24,7 +20,6 @@ public class Main {
         sb.append("Case ").append(++caseNum).append(":\n");
         Map<String, Node> dict = new HashMap<String, Node>();
         while (!input.isEmpty()) {
-            if (input.peek().equals("-1")) break;
             String[] line = input.remove().split(" ");
             if (line[0].equals("add")) {
                 if (line.length == 2) {

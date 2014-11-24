@@ -52,7 +52,7 @@ public class Graph {
     public String getAssociation(Node u, Node v) {
         if ((!this.getNodes().contains(u)) || (!this.getNodes().contains(v)))
             return "target does not exist\n";
-        int hops = this.associated(u,v);
+        int hops = associated(u,v);
         StringBuilder sb = new StringBuilder();
 
         if (hops == -1)
@@ -132,7 +132,7 @@ public class Graph {
 
     @Override public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (Node node : this.getNodes())
+        for (Node node : getNodes())
             sb.append(node).append("\n");
         return sb.toString();
     }

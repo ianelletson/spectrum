@@ -40,12 +40,12 @@ public class Node {
         if (this.getClass() != obj.getClass())
             return false;
         Node v = (Node) obj;
-        return this.getName().equals(v.getName());
+        return getName().equals(v.getName());
     }
 
     @Override public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.getName());
+        sb.append(getName());
         for (Node node : getAdjacentNodes())
             sb.append(", ").append(node.getName());
         return sb.toString();
