@@ -11,8 +11,7 @@ public class Node {
     final private String name;
 
     public Node() {
-        this.adjacentNodes = new LinkedList<Node>();
-        this.name = "unnamed";
+        this("unnamed");
     }
 
     public Node(String name) {
