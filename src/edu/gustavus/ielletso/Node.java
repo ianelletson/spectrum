@@ -3,13 +3,11 @@ package edu.gustavus.ielletso;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by ian on 11/23/14.
- */
-public class Node {
-    private List<Node> adjacentNodes;
+class Node {
+    private final List<Node> adjacentNodes;
     final private String name;
 
+    @SuppressWarnings("UnusedDeclaration")
     public Node() {
         this("unnamed");
     }
@@ -23,7 +21,7 @@ public class Node {
         return adjacentNodes;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 

@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Main {
+class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -21,6 +21,11 @@ public class Main {
         Map<String, Node> dict = new HashMap<String, Node>();
         while (!input.isEmpty()) {
             String[] line = input.remove().split(" ");
+            if (line[0].equals("reset")) {
+                graph = new Graph();
+                dict = new HashMap<String, Node>();
+                sb.append("Case ").append(++caseNum).append(":\n");
+            }
             if (line[0].equals("add")) {
                 if (line.length == 2) {
                     if (!dict.containsKey(line[1]))

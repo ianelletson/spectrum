@@ -2,14 +2,11 @@ package edu.gustavus.ielletso;
 
 import java.util.*;
 
-/**
- * Created by ian on 11/23/14.
- */
-public class Graph {
-    private List<Node> nodes;
+class Graph {
+    private final List<Node> nodes;
     private Set<Node> unvisited;
     private Set<Node> visited;
-    private Map<Node, Integer> distance;
+    private final Map<Node, Integer> distance;
     private final int BIG = Integer.MAX_VALUE;
 
     public Graph() {
@@ -17,7 +14,7 @@ public class Graph {
         distance = new HashMap<Node, Integer>();
     }
 
-    public List<Node> getNodes() {
+    List<Node> getNodes() {
         return nodes;
     }
 
@@ -33,24 +30,24 @@ public class Graph {
             u.addNode(v);
         if (!v.getAdjacentNodes().contains(u))
             v.addNode(u);
-        this.addNode(u);
-        this.addNode(v);
+        addNode(u);
+        addNode(v);
     }
 
     public String getConnections(Node u) {
-        if (!this.getNodes().contains(u)) return "target does not exist\n";
-        Map<Integer, Integer> hops = this.connections(u);
+        if (!getNodes().contains(u)) return "target does not exist\n";
+        Map<Integer, Integer> hops = connections(u);
         StringBuilder sb = new StringBuilder();
         if (hops.size() == 0)
             sb.append("no connections\n");
         else
             for (Integer i : hops.keySet()) sb.append(i).append(": ").append(hops.get(i)).append("\n");
-        this.reset();
+        reset();
         return sb.toString();
     }
 
     public String getAssociation(Node u, Node v) {
-        if ((!this.getNodes().contains(u)) || (!this.getNodes().contains(v)))
+        if ((!getNodes().contains(u)) || (!getNodes().contains(v)))
             return "target does not exist\n";
         int hops = associated(u,v);
         StringBuilder sb = new StringBuilder();
@@ -60,7 +57,7 @@ public class Graph {
         else {
             sb.append("yes: ").append(hops).append("\n");
         }
-        this.reset();
+        reset();
         return sb.toString();
     }
 
@@ -96,7 +93,7 @@ public class Graph {
         unvisited.add(u);
 
         while (!unvisited.isEmpty()) {
-            Node v = this.getMinDist(unvisited);
+            Node v = getMinDist(unvisited);
             unvisited.remove(v);
             visited.add(v);
             checkNeighbors(v);

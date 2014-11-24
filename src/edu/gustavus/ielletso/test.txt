@@ -1,40 +1,115 @@
-	    Graph graph = new Graph();
-        Node a = new Node("a");
-        Node b = new Node("b");
-        Node c = new Node("c");
-        Node d = new Node("d");
-        Node e = new Node("e");
-        Node f = new Node("f");
-        Node g = new Node("g");
-        Node h = new Node("h");
-        Node i = new Node("i");
-        Node j = new Node("j");
-        Node k = new Node("k");
-        Node m = new Node("m");
-        Node n = new Node("n");
-        graph.addEdge(a,b);
-        graph.addEdge(a,c);
-        graph.addEdge(b,d);
-        graph.addEdge(e,b);
-        graph.addEdge(c,f);
-        graph.addEdge(c,g);
-        graph.addEdge(f,h);
-        graph.addEdge(h,i);
-        graph.addEdge(j,k);
-        System.out.print(graph.getAssociation(a,i));
-        System.out.print(graph.getAssociation(i,a));
-        System.out.print(graph.getAssociation(f,k));
-        System.out.print(graph.getAssociation(a,h));
-        System.out.print(graph.getConnections(a));
-        System.out.print(graph.getConnections(i));
-        graph.addEdge(k,g);
-        System.out.print(graph.getAssociation(a,j));
-        System.out.print(graph.getConnections(a));
-        graph.addEdge(h,a);
-        System.out.print(graph.getConnections(a));
-        System.out.print(graph.getAssociation(a,h));
-        graph.addNode(m);
-        graph.addEdge(n,n);
-        System.out.print(graph.getConnections(n));
-        graph.addEdge(a,n);
-        System.out.print(graph.getConnections(n));
+Graph graph = new Graph();
+Node a = new Node("a");
+Node b = new Node("b");
+Node c = new Node("c");
+Node d = new Node("d");
+Node e = new Node("e");
+Node f = new Node("f");
+Node g = new Node("g");
+Node h = new Node("h");
+Node i = new Node("i");
+Node j = new Node("j");
+Node k = new Node("k");
+Node m = new Node("m");
+Node n = new Node("n");
+graph.addEdge(a,b);
+graph.addEdge(a,c);
+graph.addEdge(b,d);
+graph.addEdge(e,b);
+graph.addEdge(c,f);
+graph.addEdge(c,g);
+graph.addEdge(f,h);
+graph.addEdge(h,i);
+graph.addEdge(j,k);
+System.out.print(graph.getAssociation(a,i));
+System.out.print(graph.getAssociation(i,a));
+System.out.print(graph.getAssociation(f,k));
+System.out.print(graph.getAssociation(a,h));
+System.out.print(graph.getConnections(a));
+System.out.print(graph.getConnections(i));
+graph.addEdge(k,g);
+System.out.print(graph.getAssociation(a,j));
+System.out.print(graph.getConnections(a));
+graph.addEdge(h,a);
+System.out.print(graph.getConnections(a));
+System.out.print(graph.getAssociation(a,h));
+graph.addNode(m);
+graph.addEdge(n,n);
+System.out.print(graph.getConnections(n));
+graph.addEdge(a,n);
+System.out.print(graph.getConnections(n));
+
+---- Standard Input Test ----
+add a b
+add a c
+add b d
+add e b
+add c f
+add c g
+add f h
+add h i
+add j k
+associated a i
+associated i a
+associated f k
+associated a h
+connections a
+connections i
+add k g
+associated a j
+connections a
+add h a
+connections a
+associated a h
+add m
+add n n
+connections n
+add a n
+connections n
+reset
+add a
+add b
+connections a
+associated a b
+add a b
+connections a
+associated a b
+
+---- Expected Standard Input Results ----
+Case 1:
+yes: 3
+yes: 3
+no
+yes: 2
+0: 2
+1: 4
+2: 1
+3: 1
+0: 1
+1: 1
+2: 1
+3: 2
+4: 1
+5: 2
+yes: 3
+0: 2
+1: 4
+2: 2
+3: 2
+0: 3
+1: 5
+2: 1
+3: 1
+yes: 0
+no connections
+0: 1
+1: 3
+2: 5
+3: 1
+4: 1
+Case 2:
+no connections
+no
+0: 1
+yes: 0
+----------
