@@ -4,6 +4,9 @@
 
 - Graph uses Dijkstra's Algorithm to compute the shortest path. This is used to
   compute hops.
+- We chose Dijkstra's Algorithm because it was interesting to implement, and
+  effective. We do note that a simpler algorithm may be used. However Dijkstra's
+  algorithm is a linear time algorithm.
 - test.txt is a text form of the given input in hardcoded form and in standard
   input form with expected results. You can copy and past the SI test into a new
   file and test standard input for yourself.
