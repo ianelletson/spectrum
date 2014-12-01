@@ -1,3 +1,4 @@
+# NOTE THIS IS NOT TO BE USED AS A STANDARD INPUT TEST FILE
 Graph graph = new Graph();
 Node a = new Node("a");
 Node b = new Node("b");

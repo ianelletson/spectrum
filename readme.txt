@@ -8,5 +8,10 @@
   input form with expected results. You can copy and past the SI test into a new
   file and test standard input for yourself.
 - The program reads from standard input and writes to standard output. To
-  signify EOF press "ctrl-D"
+  signify EOF press "ctrl-D". There is a bug that exists in some version of
+  Eclipse that prevents the usage of "ctrl-D" to signify EOF.
+- There is a working jar and test files included in the "TEST_HERE" directory.
+  To use these files, open a terminal in the directory and run:
+  `java -jar spectrum.jar $TEST` where `$TEST` is the name of the test file.
+- The three included test files have correct output. The program does not loop.
 
