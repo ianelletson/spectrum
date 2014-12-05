@@ -29,18 +29,24 @@ class Node {
         adjacentNodes.add(node);
     }
 
-    @Override public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (this.getClass() != obj.getClass())
-            return false;
-        Node v = (Node) obj;
-        return getName().equals(v.getName());
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Node node = (Node) o;
+
+        return name.equals(node.name);
+
     }
 
-    @Override public String toString() {
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    @Override
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(getName());
         for (Node node : getAdjacentNodes())

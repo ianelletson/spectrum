@@ -31,8 +31,7 @@ class Main {
                     if (!dict.containsKey(line[1]))
                         dict.put(line[1], new Node(line[1]));
                     graph.addNode(dict.get(line[1]));
-                }
-                else {
+                } else {
                     if (!dict.containsKey(line[1]))
                         dict.put(line[1], new Node(line[1]));
                     if (!dict.containsKey(line[2]))

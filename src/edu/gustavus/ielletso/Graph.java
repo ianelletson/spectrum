@@ -49,7 +49,7 @@ class Graph {
     public String getAssociation(Node u, Node v) {
         if ((!getNodes().contains(u)) || (!getNodes().contains(v)))
             return "target does not exist\n";
-        int hops = associated(u,v);
+        int hops = associated(u, v);
         StringBuilder sb = new StringBuilder();
 
         if (hops == -1)
@@ -71,7 +71,7 @@ class Graph {
 
     private Map<Integer, Integer> connections(Node u) {
         djk(u);
-        Map<Integer, Integer> hopMap= new HashMap<Integer, Integer>();
+        Map<Integer, Integer> hopMap = new HashMap<Integer, Integer>();
         for (Map.Entry<Node, Integer> entry : distance.entrySet()) {
             if ((entry.getValue() == 0) || entry.getValue() == BIG)
                 continue;
@@ -127,7 +127,8 @@ class Graph {
         for (Node node : distance.keySet()) distance.put(node, BIG);
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Node node : getNodes())
             sb.append(node).append("\n");
